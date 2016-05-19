@@ -1,0 +1,267 @@
+#include "mh/io/meshio.h"
+
+#include <iostream>
+#include <fstream>
+
+namespace mh
+{
+
+  std::shared_ptr<Mesh> parsePly(std::string const path)
+  {
+      std::ifstream f(path);
+      if ( !f.is_open() )
+      {
+          std::cerr << "[meshio.cpp::parsePly()] could not open " << path << std::endl;
+          return nullptr;
+      }
+
+      std::vector<Eigen::Vector3f> vertData; // filled with read data
+      std::vector<Eigen::Vector3f> normalData; // filled empty
+      std::vector<Eigen::Vector3i> faceData; // unused
+
+      long int nVertices(-1);
+      long int vertexId(0);
+      bool endHeaderFound(false);
+      std::string line;
+      while ( std::getline(f,line) && (vertexId != nVertices) )
+      {
+          if ( endHeaderFound )
+          {
+              std::istringstream iss(line);
+              Eigen::Vector3f point;
+              iss >> point(0) >> point(1) >> point(2);
+              vertData.push_back(point);
+              ++vertexId;
+              continue;
+          }
+
+          // find vertex count, then end of header
+          static const std::string tag("element vertex");
+          size_t index = line.find(tag);
+          if ( index != std::string::npos )
+          {
+              std::cout << "[meshio.cpp::parsePly()] parsing vertex count from line: " << line << std::endl;
+              nVertices = std::atol( line.substr(index+tag.size(),line.size()-index+tag.size()).c_str() );
+              std::cout << "[meshio.cpp::parsePly()] parsed vertex count: " << nVertices << std::endl;
+              vertData.reserve(nVertices);
+              normalData.resize( nVertices, Eigen::Vector3f::Zero() );
+          }
+          else if ( line.find("end_header") != std::string::npos )
+          {
+              if ( nVertices == (long int)(-1) )
+              {
+                  std::cerr << "[meshio.cpp::parsePly()] reached end of ply header, but did not find vertex count...stopping" << std::endl;
+                  return nullptr;
+              }
+              endHeaderFound = true;
+          }
+          else
+              std::cout << "[meshio.cpp::parsePly()] skipping line " << line << std::endl;
+      }
+
+      f.close();
+
+      return std::make_shared<Mesh>( vertData, normalData, faceData );
+  } //...parsePly()
+
+# if USE_ASSIMP
+    namespace mh_internal
+    {
+        /** \brief Functor to compare two Eigen::Vector3f-s by their x, then y, then z coordinates. */
+        struct CompVector3
+        {
+            /** \brief Non-static compare to be used by std::map. */
+            inline bool operator()(Eigen::Vector3f const &a, Eigen::Vector3f const &b) const { return CompVector3::eval(a,b); }
+            /** \brief      Static compare vector callable manually.
+             * \param[in] a First vector with 3 coordinates.
+             * \param[in] b Second vector with 3 coordinates.
+             * \return      true, if a < b.
+             */
+            static inline bool eval(Eigen::Vector3f const &a, Eigen::Vector3f const &b)
+            {
+                if (a(0) == b(0)) {
+                    if (a(1) == b(1))
+                        return a(2) < b(2);
+                    else
+                        return a(1) < b(1);
+                } else
+                    return a(0) < b(0);
+            } //...operator()
+        }; //...CompVector3
+    } //...ns mh_internal
+    
+    /** \brief               Takes an assimp mesh input and converts it to our mh::Mesh.
+     *                       It also identifies duplicate vertices (up to \p eps),
+     *                       and takes all neighbouring face normals to average a vertex normal.
+     *  \param[in] inputMesh Mesh read by assimp, containing vertices and faces, possibly normals.
+     *  \param[in] eps       Minimum distance of two vertices to be considered different. Default: 1e-5f.
+     *  \return              A Mesh constructed from the input data. If no normals were provided, the default normal is 0-s.
+     *  \todo                Weighted average vertex normals by face area.
+     */
+    Mesh convertFromAssimp(const aiMesh * inputMesh, float const eps)
+    {
+        std::vector<Eigen::Vector3f> vertData;
+        std::vector<Eigen::Vector3f> normalData;
+        std::vector<Eigen::Vector3i> faceData;
+        
+        // store the input cloud in a heap ordered by x, then y, then z
+        std::map<Eigen::Vector3f,int,mh_internal::CompVector3> hash;
+        // map index in inputMesh -> index in vertData
+        std::map<int,int> remap;
+        // collect normals for averaging (index in vertData -> list of normals)
+        std::map<int,std::vector<Eigen::Vector3f> > normals;
+        
+        // for each read vertex
+        for (size_t i = 0; i < inputMesh->mNumVertices; ++i)
+        {
+            // parse new position
+            Eigen::Vector3f v(inputMesh->mVertices[i].x,inputMesh->mVertices[i].y,inputMesh->mVertices[i].z);
+            
+            // check for the closest smaller coordinate
+            auto lb     = hash.lower_bound(v);
+            // iterator to closest element
+            auto target = hash.end(); // init to invalid
+            
+            // if anything found at all
+            if (lb != hash.end())
+            {
+                // try finding upper bound
+                auto ub = lb;
+                while (std::next(ub)!=hash.end() && mh_internal::CompVector3::eval(std::next(ub)->first,v))
+                    ub = std::next(ub);
+                
+                // if upper bound different, compare distances
+                if (ub != lb)
+                {
+                    float const diffLb = (lb->first-v).norm(); // difference to lower bound
+                    float const diffUb = (ub->first-v).norm(); // difference to upper bound
+                    
+                    // choose
+                    if (diffLb <= diffUb) { // if lower closer
+                        if (diffLb < eps) // if lower close enough
+                            target = lb;    // choose lower bound
+                    } else {                // if lower not closer
+                        if (diffUb < eps) // if upper close enough
+                            target = ub;    // choose upper bound
+                    }
+                } // if upper was invalid or the same
+                else if ((lb->first-v).norm() < eps) // test, if lower close enough
+                    target = lb; // choose lower bound
+                
+                // check if upper_bound needed at all
+                if (target == ub && target != lb)
+                    std::cerr << "yes, useful: " << v.transpose()
+                    << ", lb: " << lb->first.transpose()
+                    << ", ub: " << ub->first.transpose()
+                    << std::endl;
+            } //...if lower bound found
+            
+            // if close enough found, remember the index of the already stored vertex
+            if (target != hash.end())
+            {
+                // vertex in inputMesh -> vertex in vertData
+                remap[i] = target->second;
+                // store normal for averaging later
+                if (inputMesh->HasNormals())
+                    normals[target->second].push_back(Eigen::Vector3f(inputMesh->mNormals[i].x,inputMesh->mNormals[i].y,inputMesh->mNormals[i].z));
+            }
+            else // if nothing was close enough, this is a new vertex
+            {
+                // store position
+                vertData.push_back(v);
+                // store id: vertexId in inputMesh -> vertexId in vertData
+                remap[i] = hash.size();
+                // store location -> vertexId in vertData
+                hash.insert(std::make_pair(v, hash.size()));
+                
+                // store own normal
+                if (inputMesh->HasNormals())
+                {
+                    normalData.push_back(Eigen::Vector3f(
+                                                         inputMesh->mNormals[i].x,
+                                                         inputMesh->mNormals[i].y,
+                                                         inputMesh->mNormals[i].z));
+                } else { // default normal is 0
+                    normalData.push_back(Eigen::Vector3f(0.0f, 0.0f, 0.0f));
+                } //...default normal
+            } //...if nothing close enough
+        } //...for each input vertex
+        
+        // average normals of faces around vertex
+        for ( std::pair<int,std::vector<Eigen::Vector3f>> const& idAndNormals : normals )
+        {
+            int id = idAndNormals.first;
+            Eigen::Vector3f normal = normalData.at(id);
+            for (Eigen::Vector3f const& otherNormal : idAndNormals.second)
+                normal += otherNormal;
+            normalData[id] = (normalData[id] + normal) / (idAndNormals.second.size() + 1);
+        }
+        
+        // read faces
+        if (inputMesh->HasFaces())
+        {
+            for (size_t i = 0; i < inputMesh->mNumFaces; ++i)
+            {
+                const aiFace * face = &(inputMesh->mFaces[i]);
+                
+                faceData.push_back(Eigen::Vector3i(
+                                                   remap.at(face->mIndices[0]),
+                                                   remap.at(face->mIndices[1]),
+                                                   remap.at(face->mIndices[2])));
+            }
+        }
+        
+        // construct mesh
+        return Mesh(vertData, normalData, faceData);
+    } //...convertFromAssimp()
+#   endif // USE_ASSIMP
+    
+    /** \brief                Load mesh(es) from a path.
+     *  \param[in] forceCloud Force a ply file to be read without faces.
+     * */
+    
+    
+    std::vector<std::shared_ptr<Mesh> > loadMeshesFromFile(std::string path)
+    {
+        std::vector<std::shared_ptr<Mesh> > meshes;
+
+        // Temporary fix: assimp cannot take ply point clouds without faces
+        if ( path.find("ply") == path.size() - 3 )
+        {
+            std::cout << "[meshio.cpp::loadMeshesFromFile()] loading " << path << std::endl;
+            std::shared_ptr<Mesh> mesh = parsePly(path);
+            if ( mesh )
+                meshes.emplace_back( mesh );
+            else
+                std::cerr << "Could not parse ply file " << path << std::endl;
+        }
+        else
+        {
+#       if USE_ASSIMP
+            Assimp::Importer importer;
+
+            const aiScene *scene = importer.ReadFile(path.c_str(), aiProcess_JoinIdenticalVertices
+            );
+
+            MH_ASSERT(scene);
+
+            meshes.reserve(scene->mNumMeshes);
+            for (size_t i = 0; i < scene->mNumMeshes; ++i)
+            {
+                auto mesh = std::make_shared<Mesh>(convertFromAssimp(scene->mMeshes[i]));
+                meshes.push_back(mesh);
+            }
+#       else
+            std::cerr << "Enable Assimp library to load other types of meshes" << std::endl;
+#       endif // USE_ASSIMP
+        }
+
+        std::cout << "[meshio.cpp::loadMeshesFromFile()] \"meshes\" has " << meshes.size() << " mesh(es)" << std::endl;
+        for ( size_t meshId = 0; meshId != meshes.size(); ++meshId )
+        {
+            Mesh const& mesh = *meshes.at(meshId);
+            std::cout << "[meshio.cpp::loadMeshesFromFile()]\t Mesh" << meshId << " has " << mesh.getVertices().size() << " vertices" << std::endl;
+        }
+        return meshes;
+    } //...loadMeshesFromFile()
+} // namespace mh

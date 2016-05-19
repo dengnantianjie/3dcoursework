@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/meshviewer.dir/example/meshviewer/gui/meshviewer.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer/gui/meshviewer.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer/gui/meshviewer.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/meshviewer.dir/example/meshviewer/gui/assignment2.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer/gui/assignment2.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer/gui/assignment2.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/meshviewer.dir/example/meshviewer/main.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer/main.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer/main.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/mh.dir/src/3d/camera.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/camera.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/camera.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/mh.dir/src/3d/face.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/face.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/face.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/mh.dir/src/3d/mesh.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/mesh.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/mesh.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/mh.dir/src/3d/scene.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/scene.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/scene.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/mh.dir/src/3d/util.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/util.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/src/3d/util.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/mh.dir/src/gpu/shader.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/src/gpu/shader.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/src/gpu/shader.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/mh.dir/src/gui/viewer.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/src/gui/viewer.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/src/gui/viewer.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/mh.dir/src/gui/widgets/widget.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/src/gui/widgets/widget.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/src/gui/widgets/widget.cpp"
+},
+{
+  "directory": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -DUSE_ASSIMP -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include -I/opt/local/include -I/Users/DNTJ/Desktop/3D_coursework/framework/lib/example/meshviewer   -std=c++11 -stdlib=libc++         -Wall -O3 -DNDEBUG -O2   -o CMakeFiles/mh.dir/src/io/meshio.cpp.o -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/src/io/meshio.cpp",
+  "file": "/Users/DNTJ/Desktop/3D_coursework/framework/lib/src/io/meshio.cpp"
+}
+]

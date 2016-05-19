@@ -1,0 +1,10 @@
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include/GLFW/glfw3.h
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/include/GLFW/glfw3native.h
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/lib/cmake/glfw/glfw3Config.cmake
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/lib/cmake/glfw/glfw3ConfigVersion.cmake
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/lib/cmake/glfw/glfwTargets.cmake
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/lib/cmake/glfw/glfwTargets-noconfig.cmake
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/lib/pkgconfig/glfw3.pc
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/lib/libglfw.3.1.dylib
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/lib/libglfw.3.dylib
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/install/lib/libglfw.dylib

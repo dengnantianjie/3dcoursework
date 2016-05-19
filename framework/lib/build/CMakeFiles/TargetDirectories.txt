@@ -1,0 +1,3 @@
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/build/CMakeFiles/meshviewer.dir
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/build/CMakeFiles/mh.dir
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/build/CMakeFiles/HEADERS_TARGET.dir

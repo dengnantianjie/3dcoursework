@@ -1,0 +1,185 @@
+The system is: Darwin - 13.4.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is AppleClang, found in "/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/3.4.2/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dac00/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_dac00.dir/build.make CMakeFiles/cmTC_dac00.dir/build
+Building C object CMakeFiles/cmTC_dac00.dir/testCCompiler.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc     -o CMakeFiles/cmTC_dac00.dir/testCCompiler.c.o   -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_dac00
+/usr/local/Cellar/cmake/3.4.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dac00.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_dac00.dir/testCCompiler.c.o  -o cmTC_dac00  
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c8115/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c8115.dir/build.make CMakeFiles/cmTC_c8115.dir/build
+Building C object CMakeFiles/cmTC_c8115.dir/CMakeCCompilerABI.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc     -o CMakeFiles/cmTC_c8115.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.4.2/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_c8115
+/usr/local/Cellar/cmake/3.4.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8115.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_c8115.dir/CMakeCCompilerABI.c.o  -o cmTC_c8115   
+Apple LLVM version 6.0 (clang-600.0.57) (based on LLVM 3.5svn)
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.9.0 -o cmTC_c8115 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c8115.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-241.9
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7m armv7em
+Library search paths:
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_c8115/fast"]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c8115.dir/build.make CMakeFiles/cmTC_c8115.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_c8115.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc     -o CMakeFiles/cmTC_c8115.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.4.2/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_c8115]
+  ignore line: [/usr/local/Cellar/cmake/3.4.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8115.dir/link.txt --verbose=1]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_c8115.dir/CMakeCCompilerABI.c.o  -o cmTC_c8115   ]
+  ignore line: [Apple LLVM version 6.0 (clang-600.0.57) (based on LLVM 3.5svn)]
+  ignore line: [Target: x86_64-apple-darwin13.4.0]
+  ignore line: [Thread model: posix]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.9.0 -o cmTC_c8115 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c8115.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.9.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_c8115] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_c8115.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/Library/Developer/CommandLineTools/usr/bin/../lib/clang/6.0/lib/darwin/libclang_rt.osx.a] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [/Library/Developer/CommandLineTools/usr/lib/clang/6.0/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5e36c/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_5e36c.dir/build.make CMakeFiles/cmTC_5e36c.dir/build
+Building C object CMakeFiles/cmTC_5e36c.dir/feature_tests.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_5e36c.dir/feature_tests.c.o   -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_5e36c
+/usr/local/Cellar/cmake/3.4.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e36c.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_5e36c.dir/feature_tests.c.o  -o cmTC_5e36c  
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_193b5/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_193b5.dir/build.make CMakeFiles/cmTC_193b5.dir/build
+Building C object CMakeFiles/cmTC_193b5.dir/feature_tests.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_193b5.dir/feature_tests.c.o   -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_193b5
+/usr/local/Cellar/cmake/3.4.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_193b5.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_193b5.dir/feature_tests.c.o  -o cmTC_193b5  
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f3d66/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_f3d66.dir/build.make CMakeFiles/cmTC_f3d66.dir/build
+Building C object CMakeFiles/cmTC_f3d66.dir/feature_tests.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_f3d66.dir/feature_tests.c.o   -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_f3d66
+/usr/local/Cellar/cmake/3.4.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f3d66.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_f3d66.dir/feature_tests.c.o  -o cmTC_f3d66  
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_eb34b/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_eb34b.dir/build.make CMakeFiles/cmTC_eb34b.dir/build
+Building C object CMakeFiles/cmTC_eb34b.dir/CheckIncludeFile.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc     -o CMakeFiles/cmTC_eb34b.dir/CheckIncludeFile.c.o   -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_eb34b
+/usr/local/Cellar/cmake/3.4.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb34b.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_eb34b.dir/CheckIncludeFile.c.o  -o cmTC_eb34b  
+
+
+Determining if the pthread_create exist passed with the following output:
+Change Dir: /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_baea7/fast"
+/Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_baea7.dir/build.make CMakeFiles/cmTC_baea7.dir/build
+Building C object CMakeFiles/cmTC_baea7.dir/CheckSymbolExists.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc     -o CMakeFiles/cmTC_baea7.dir/CheckSymbolExists.c.o   -c /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_baea7
+/usr/local/Cellar/cmake/3.4.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_baea7.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_baea7.dir/CheckSymbolExists.c.o  -o cmTC_baea7  
+
+File /Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

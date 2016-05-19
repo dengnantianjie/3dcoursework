@@ -1,0 +1,2 @@
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/CMakeFiles/uninstall.dir
+/Users/DNTJ/Desktop/3D_coursework/framework/lib/extern/glfw-3.1.2/build/src/CMakeFiles/glfw.dir
